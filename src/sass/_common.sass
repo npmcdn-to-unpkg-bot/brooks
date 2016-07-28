@@ -1,0 +1,112 @@
+
+
+body
+	background: #FFF
+	font-size: 14px
+	line-height: 1.4
+	+smooth-font
+	+f('s', 14 , 1)
+	font-weight: 300
+	overflow-x: hidden 
+
+$brooks-text: #4a4a4a
+$brooks-magenta: #ee3f54
+$brooks-blue: #2c9bf6
+$brooks-gold: #cdb389
+.h1
+	font-size: 40px
+	font-weight: 300
+.h2
+	font-size: 28px
+	font-weight: 300
+.h3
+ 	font-size: 24px
+ 	font-weight: 300
+.h4
+	font-size: 16px
+	font-weight: 300
+
+.enlarge-font
+	font-size: 16px
+
+a
+	color: $brooks-text
+	text-decoration: none
+	&:hover,
+	&:active,
+	&:focus
+		color: $brooks-magenta
+		text-decoration: none
+
+.brooks-btn
+	display: block
+	text-decoration: none
+	width: 260px
+	height: 60px
+	line-height: 60px
+	text-align: center
+	background-color: $brooks-magenta
+	color: #FFF
+	border: $brooks-magenta 1px solid
+	+trans(all, .5s)
+	&:hover
+		text-decoration: none
+		color: $brooks-magenta
+		background-color: #FFF
+	&:active,
+	&:focus
+		text-decoration: none
+
+
+
+=brooks-underline-center
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		top: 70%
+		left: 50%
+		width: 40px
+		height: 3px
+		margin-left: -20px
+		@content
+
+=brooks-underline
+	position: relative
+	&:after
+		content: ""
+		position: absolute
+		top: 70%
+		left: 0
+		width: 40px
+		height: 3px
+		@content
+
+.margine__left
+	margin-left: 100px
+.margin__bottom
+	margin-bottom: 100px
+
+.brooks__underline-m-center
+	+brooks-underline-center
+		background-color: $brooks-magenta
+
+.brooks__underline-m
+	+brooks-underline
+		background-color: $brooks-magenta
+
+.brooks__underline-b
+	+brooks-underline
+		background-color: $brooks-blue
+
+.brooks__underline-g
+	+brooks-underline
+		background-color: $brooks-gold
+
+.brooks__space
+	width: 100%
+	height: 40px
+
+=fl
+	padding-bottom: 44px
+	line-height: 33px

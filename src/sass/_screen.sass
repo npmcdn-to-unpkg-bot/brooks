@@ -1,0 +1,427 @@
+.top__section
+	position: relative
+	z-index: 1
+	padding-bottom: 80px
+	margin-bottom: 80px
+	.top__section-in
+		position: relative
+		z-index: 4
+		padding: 80px
+		.top__header
+			margin: 0 -15px
+			.top__header-logo
+				max-width: 100%
+				height: auto
+			.top__header-sup
+				line-height: 55px
+				color: white
+				font-weight: 300
+			.top__header-sub
+				line-height: 38px
+				color: white
+				font-weight: 300
+		.top__header-button
+			margin: 100px -15px
+		.top__section-over
+			position: relative
+			height: 100%
+			z-index: -1
+			.top__section-over-in
+				position: absolute
+				z-index: 2
+				transform: translate(0,-50%)
+				top: 78px
+				left: 0
+				+r(768) 
+					position: relative
+					transform: translate(0, 0)
+				.top__dev
+					position: relative
+					width: auto
+					+r(768)
+						max-width: 100% 
+				.top__dev1
+					top: 190px
+					left: 30px
+					+r(768)
+						top: 0
+						left: 0
+				.top__dev2
+					top: 340px
+					left: -40px
+					z-index: 5
+					+r(768)
+						top: 0
+						left: 0
+				.top__dev3
+					z-index: 4
+					left: -190px
+					top: -22px
+					+r(768)
+						top: 0
+						left: 0
+
+	.top__section-bg
+		+coverdiv
+		z-index: 2
+		background: url('./../img/top-bg.png') center/cover no-repeat fixed #FFF
+	.top__section-grad
+		+coverdiv
+		z-index: 3
+		background-image: linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.21) 100%)
+
+//
+//section page
+//
+.pages
+	position: relative
+	z-index: 1
+	color: $brooks-text
+	padding-top: 300px
+	text-align: center
+	&:after
+		content: " "
+		position: absolute
+		z-index: 3
+		bottom: 0
+		height: 100px
+		left: 0
+		right: 0
+		background-image: linear-gradient(180deg, transparent 0%,  white 70%, white 100%);
+	.pages__header
+		width: 100% 
+		height: 100%
+		+fl
+		font-weight: 300
+	.pages__pic-holder
+		position: relative
+		z-index: 3 
+		overflow: hidden
+		&:hover
+			.pages__pic-hover
+				visibility: visible
+				opacity: 1
+		.pages__pic
+			object-fit: cover
+			-webkit-object-fit: cover
+			width: 100%
+			height: auto
+		.pages__pic-hover
+			+coverdiv
+			left: 9px
+			width: 95%
+			height: 91%
+
+			z-index: 4
+			background: rgba(#000 , .7)
+			visibility: hidden
+			opacity: 0
+			+trans(all,.5s)
+
+
+			.pages__ref
+				+vcenter
+				color: #fff
+				+trans(all, .5s, cubic-bezier(0.5, -0.5, 0.5, 1.5) )
+				padding-left: 35px
+				&:hover
+					color: $brooks-magenta
+				&:hover:after
+					+trans(all, .5s, cubic-bezier(0.5, -0.5, 0.5, 1.5))
+					left: 20px
+					color: $brooks-magenta
+				&:after
+					+trans(all, .5s, cubic-bezier(0.5, -0.5, 0.5, 1.5))
+					position: relative
+					top: -2px
+					left: 10px
+					content: "→"
+	.pages__desc
+		text-align: center
+		padding-bottom: 35px
+		
+.singlepage
+	position: relative
+	z-index: 1
+	color: $brooks-text
+	padding-top: 160px
+	.singlepage__header
+		+fl
+		text-align: left
+		font-weight: 300
+	.singlepage__subheader
+		font-weight: 300
+		line-height: 21px
+	.singlepage_est,
+	.singlepage_shop,
+	.singlefolio
+		position: relative
+		width: auto
+		+r(768)
+			max-width: 100% 
+	.singlepage_est1
+		top: 330px
+		left: 0px
+		z-index: 7
+		+r(768)
+			top: 0
+			left: 0
+	.singlepage_est2
+		top: 70px
+		left: 00px
+		z-index: 6
+		+r(768)
+			top: 0
+			left: 0
+	.singlepage_est3
+		top: -100px
+		left: 00px
+		z-index: 5
+		+r(768)
+			top: 0
+			left: 0
+	.singlepage_shop1
+		top: 10px
+		left: 0px
+		z-index: 7
+		+r(768)
+			top: 0
+			left: 0
+	.singlepage_shop2
+		top: -100px
+		left: 0px
+		z-index: 6
+		+r(768)
+			top: 0
+			left: 0
+	.singlepage_shop3
+		top: 140px
+		left: 00px
+		z-index: 5
+		+r(768)
+			top: 0
+			left: 0
+	.singlefolio1
+		top: 200px
+		left: 24px
+		z-index: 7
+		+r(768)
+			top: 0
+			left: 0
+	.singlefolio2
+		top: 100px
+		left: 40px
+		z-index: 6
+		+r(768)
+			top: 0
+			left: 0
+	.singlefolio3
+		top: -100px
+		left: 60px
+		z-index: 5
+		+r(768)
+			top: 0
+			left: 0
+	.singlepages-lastrow
+		margin-top: -180px
+		+r(768)
+			margin-top: 0
+	.singlepages-buttom
+
+
+.two__colomns
+	position: relative
+	z-index: 1
+	background-color: #fafafa
+	padding-top: 40px
+	.two__colomns-in
+		.two__colomns__header
+
+			padding-bottom: 60px
+
+.responsive
+	position: relative
+	z-index: 2
+	padding-top: 70px
+	.responsive__header
+		+fl
+	.responsive__dev-block
+		position: relative
+		z-index: 1
+		.responsive__dev-block-in
+			position: relative
+			bottom: -40px
+			width: 100%
+			display: flex
+			.responsive__dev-out
+				display: flex
+				.responsive__dev
+					margin-top: auto
+	.responsive__bg-out
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		z-index: -1
+		.responsive__bg
+			position: absolute
+			top: 0
+			z-index: 2
+			width: 100%
+			height: 100%
+		.responsive__bg1
+			background:  url('./../img/responsive_layer1.png') 0 100%/auto auto  repeat-x transparent
+		.responsive__bg2
+			z-index: 3
+			background:  url('./../img/responsive_layer2.png') 0 100%/auto auto  repeat-x transparent
+		.responsive__bg3
+			z-index: 4
+			background:  url('./../img/responsive_layer3.png') 0 100%/auto auto  repeat-x transparent
+		.responsive__bg4
+			z-index: 5
+			background:  url('./../img/responsive_layer4.png') 0 100%/auto auto  repeat-x transparent
+		.responsive__bg5
+			z-index: 6
+			background:  url('./../img/responsive_grid.png') 0 100%/100% auto  repeat-x transparent
+
+#two__colomns2
+	padding-top: 160px
+	background: #fff
+	.tile
+		width: 554px
+		height: 150px
+		background-color: rgba(#d8d8d8, 0.15)
+		margin-bottom: 20px
+		+clr
+		.tile__pic
+			position: relative
+			float: left
+			height: 100%
+			width: percentage(150/554) 
+			.tile__pic-in
+				+vcenter
+		.tile__desc
+			float: left
+			height: 100% 
+			width: percentage((554-150)/554) 
+			.tile__header
+				font-weight: 300
+				line-height: 18px
+				padding: 28px 20px 10px 0
+
+			.tile__content
+				font-weight: 300
+				line-height: 22px
+				padding: 0 20px 0 0
+
+
+.features
+	position: relative
+	z-index: 1
+	padding-top: 70px 
+	.features-in
+		text-align: center
+		.features__header
+			+fl
+			margin-bottom: 44px
+		.tile
+			+clr
+			padding-bottom: 115px 
+			display: flex
+			align-items: center
+			.feature__pic
+				position: relative
+				float: left
+				width: 40%
+				height: 100%
+	
+				.feature__pic-in
+					+vcenter
+			.feature__header
+				float: left
+				width: 60%
+				height: 100%
+				text-align: left
+				
+
+.why
+	position: relative
+	z-index: 1
+	padding-top: 70px
+	margin-top: 70px
+	.why-in
+		padding-top: 640px 
+		padding-top: 45vw
+		text-align: center
+	.why__header
+		+fl
+		margin-bottom: 44px
+		color: #FFF 
+		
+	.tile__pic
+
+		padding-bottom: 38px 
+		+vertical
+		text-align: left
+		.tile__pic-in
+			display: inline-block
+			vertical-align: middle
+		.tile__header
+			display: inline-block
+			vertical-align: bottom
+			padding-left: 17px
+			padding-bottom: 4px
+	.tile__content
+		text-align: left
+		
+	.why__bg-out
+		width: 100%
+		height: 100%
+		position: absolute
+		top: 0
+		z-index: -1
+		.why__bg
+			position: absolute
+			top: 0
+			z-index: 2
+			width: 100%
+			height: 100%
+		.why__bg1
+			background:  url('./../img/big_logo.png') center 0/auto auto  no-repeat transparent
+		.why__bg2
+			z-index: 3
+			background:  url('./../img/why.png') center 100%/100% auto  no-repeat transparent
+
+.clients
+	position: relative
+	z-index: 1
+	padding: 80px 
+	.clients-in
+		text-align: center
+	.client__header
+		+fl
+		margin-bottom: 44px
+	.tile
+		text-align: left
+		.tile__pic-in
+			padding-bottom: 15px
+		.tile__header
+			padding-bottom: 15px
+		.tile__content	
+.footer
+	position: relative
+	z-index: 2
+	height: 355px 
+	text-align: center
+	.footer-in
+		position: relative
+		z-index: 3
+		padding-top: 85px 
+		.footer-note
+			padding: 20px 30px
+		.footer-button
+	
+	.footer-bg
+		+coverdiv
+		zoom: 1
+		background:  url('./../img/footer.png') center/cover  no-repeat transparent
