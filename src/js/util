@@ -1,0 +1,6 @@
+export function getScrollDirection(wheelEvent) {
+    const e = wheelEvent.originalEvent || wheelEvent;
+    const deltaY = e.deltaY;
+    const direction = (deltaY < 0) ? 'up' : 'down';
+    return direction;
+}	
