@@ -1,4 +1,7 @@
 
+html
+	width: 100%
+	overflow-x: hidden
 
 body
 	background: #FFF
@@ -7,8 +10,17 @@ body
 	+smooth-font
 	+f('s', 14 , 1)
 	font-weight: 300
-	overflow-x: hidden 
-
+	overflow-x: hidden
+	overflow-y: scroll
+.out
+	width: 100%
+	overflow-x: hidden
+	touch-action: pan-y
+	
+.animated
+	+rmin(768)
+		opacity: 0
+	
 $brooks-text: #4a4a4a
 $brooks-magenta: #ee3f54
 $brooks-blue: #2c9bf6
@@ -49,13 +61,13 @@ a
 	color: #FFF
 	border: $brooks-magenta 1px solid
 	+trans(all, .5s)
-	&:hover
-		text-decoration: none
-		color: $brooks-magenta
-		background-color: #FFF
+	&:hover,
 	&:active,
 	&:focus
 		text-decoration: none
+		color: $brooks-magenta
+		background-color: transparent
+
 
 
 
@@ -64,7 +76,7 @@ a
 	&:after
 		content: ""
 		position: absolute
-		top: 70%
+		bottom: 33px
 		left: 50%
 		width: 40px
 		height: 3px
@@ -76,7 +88,7 @@ a
 	&:after
 		content: ""
 		position: absolute
-		top: 70%
+		bottom: 33px
 		left: 0
 		width: 40px
 		height: 3px
@@ -84,9 +96,14 @@ a
 
 .margine__left
 	margin-left: 100px
+	+r(767)
+		margin-left: 0px
+
 .margin__bottom
 	margin-bottom: 100px
-
+.resp100w
+	+r(414)
+		max-width: 100% 
 .brooks__underline-m-center
 	+brooks-underline-center
 		background-color: $brooks-magenta
@@ -110,3 +127,7 @@ a
 =fl
 	padding-bottom: 44px
 	line-height: 33px
+	
+.hidetale
+	+r(767)
+		display: none 

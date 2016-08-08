@@ -1,3 +1,4 @@
+
 .top__section
 	position: relative
 	z-index: 1
@@ -7,21 +8,26 @@
 		position: relative
 		z-index: 4
 		padding: 80px
+		+r(1024)
+			padding: 40px
 		.top__header
 			margin: 0 -15px
-			.top__header-logo
-				max-width: 100%
-				height: auto
 			.top__header-sup
 				line-height: 55px
 				color: white
 				font-weight: 300
-			.top__header-sub
-				line-height: 38px
-				color: white
-				font-weight: 300
+				color: $brooks-text
+				+r(768)
+					margin-top: 20px
+		.top__header-sub
+			font-weight: 300
+			margin: 50px -15px 0
+			color: $brooks-text
+			+r(768)
+				margin-top: 20px
 		.top__header-button
-			margin: 100px -15px
+			margin: 50px -15px 
+
 		.top__section-over
 			position: relative
 			height: 100%
@@ -32,9 +38,11 @@
 				transform: translate(0,-50%)
 				top: 78px
 				left: 0
+				width: 100%
+				text-align: center
 				+r(768) 
-					position: relative
-					transform: translate(0, 0)
+					& > .row > div:first-child
+						display: none
 				.top__dev
 					position: relative
 					width: auto
@@ -44,27 +52,44 @@
 					top: 190px
 					left: 30px
 					+r(768)
-						top: 0
-						left: 0
+						top: 57px
+						left: 0px
+						max-width: 203px
+					+r(1024)
+						display: none
+		
+						
 				.top__dev2
 					top: 340px
 					left: -40px
 					z-index: 5
 					+r(768)
-						top: 0
-						left: 0
+						top: 143px
+						left: 15px
+						max-width: 95px
+					+r(1024)
+						display: none
 				.top__dev3
 					z-index: 4
 					left: -190px
 					top: -22px
+					+r(1024)
+						max-height: 300px
 					+r(768)
-						top: 0
 						left: 0
+						top: -22px
+						max-width: 380px
+					+r(767)
+						top: 23px
+						max-width: 100%
+						
+
+						
 
 	.top__section-bg
 		+coverdiv
 		z-index: 2
-		background: url('./../img/top-bg.png') center/cover no-repeat fixed #FFF
+		background: url('./../img/top-bg.jpg') center/cover no-repeat fixed #FFF
 	.top__section-grad
 		+coverdiv
 		z-index: 3
@@ -79,15 +104,34 @@
 	color: $brooks-text
 	padding-top: 300px
 	text-align: center
+	+r(768) 
+		padding-top: 100px 
 	&:after
 		content: " "
 		position: absolute
-		z-index: 3
-		bottom: 0
-		height: 100px
+		z-index: 4
+		bottom: -20px
+		height: 150px
 		left: 0
 		right: 0
-		background-image: linear-gradient(180deg, transparent 0%,  white 70%, white 100%);
+		background-image: linear-gradient(180deg, transparent 0%,  white 46%, white 100%)
+		+r(767)
+			content: none
+	&:before
+		content: " "
+		position: absolute
+		z-index: 5
+		bottom: -220px
+		height: 250px
+		left: 0
+		right: 0
+		background: white
+		+r(767)
+			content: none
+	.page__container
+		padding: 0 5% 
+		+r(1280)
+			padding: 0 6.5% 
 	.pages__header
 		width: 100% 
 		height: 100%
@@ -97,6 +141,7 @@
 		position: relative
 		z-index: 3 
 		overflow: hidden
+		box-shadow: 6px 6px 18px 2px rgba(#000,.25)
 		&:hover
 			.pages__pic-hover
 				visibility: visible
@@ -106,24 +151,25 @@
 			-webkit-object-fit: cover
 			width: 100%
 			height: auto
+			
 		.pages__pic-hover
 			+coverdiv
-			left: 9px
-			width: 95%
-			height: 91%
-
+			left: 0px
+			width: 100%
+			height: 100%
+		
 			z-index: 4
 			background: rgba(#000 , .7)
 			visibility: hidden
 			opacity: 0
-			+trans(all,.5s)
-
+			+trans(all,.5s) 
 
 			.pages__ref
 				+vcenter
 				color: #fff
+				cursor: pointer
 				+trans(all, .5s, cubic-bezier(0.5, -0.5, 0.5, 1.5) )
-				padding-left: 35px
+				padding-left: 15px
 				&:hover
 					color: $brooks-magenta
 				&:hover:after
@@ -133,18 +179,20 @@
 				&:after
 					+trans(all, .5s, cubic-bezier(0.5, -0.5, 0.5, 1.5))
 					position: relative
-					top: -2px
+					top: 0px
 					left: 10px
 					content: "→"
 	.pages__desc
 		text-align: center
-		padding-bottom: 35px
+		padding: 20px 0 35px
 		
 .singlepage
 	position: relative
 	z-index: 1
 	color: $brooks-text
 	padding-top: 160px
+	+r(768) 
+		padding-top: 70px 
 	.singlepage__header
 		+fl
 		text-align: left
@@ -157,50 +205,70 @@
 	.singlefolio
 		position: relative
 		width: auto
+		+gpu
 		+r(768)
-			max-width: 100% 
+			max-width: 180%
+		+r(767)
+			width: 100% 
 	.singlepage_est1
 		top: 330px
-		left: 0px
+		left: -20px
 		z-index: 7
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			margin-top: -120px
+		+r(767)
+			display: none
 	.singlepage_est2
 		top: 70px
-		left: 00px
+		left: 0px
 		z-index: 6
 		+r(768)
 			top: 0
 			left: 0
+			padding-top: 30px
+
 	.singlepage_est3
 		top: -100px
-		left: 00px
+		left: -52px
 		z-index: 5
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			margin-top: 60px
+		+r(767)
+			display: none
 	.singlepage_shop1
 		top: 10px
-		left: 0px
+		left: -20px
 		z-index: 7
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			display: none
 	.singlepage_shop2
 		top: -100px
 		left: 0px
 		z-index: 6
 		+r(768)
-			top: 0
+			top: 0px
+			left: -50px
+		+r(767)
 			left: 0
+			padding-top: 30px
 	.singlepage_shop3
 		top: 140px
-		left: 00px
+		left: 47px
 		z-index: 5
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			display: none
 	.singlefolio1
 		top: 200px
 		left: 24px
@@ -208,6 +276,8 @@
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			display: none
 	.singlefolio2
 		top: 100px
 		left: 40px
@@ -215,17 +285,27 @@
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			display: none
 	.singlefolio3
 		top: -100px
-		left: 60px
+		left: 47px
 		z-index: 5
 		+r(768)
 			top: 0
 			left: 0
+		+r(767)
+			padding: 30px 0 200px 0 
 	.singlepages-lastrow
-		margin-top: -180px
+		position: absolute
+		border: 0;
+		top: 100%;
+		transform: translate(0,-100%)
+		padding-bottom: 100px
+		z-index: 20
 		+r(768)
-			margin-top: 0
+			padding-bottom: 20px
+				
 	.singlepages-buttom
 
 
@@ -234,10 +314,20 @@
 	z-index: 1
 	background-color: #fafafa
 	padding-top: 40px
-	.two__colomns-in
-		.two__colomns__header
+	.two__colomns__header
+		padding-bottom: 44px
+		
+		img
+			width: 376px
+			height: auto  
+			+r(767)
+				max-width: 100% 
+	.two__colomns-logo
+		+r(768)
+			padding-top: 40px
+			padding-bottom: 20px
+			max-width: 100%
 
-			padding-bottom: 60px
 
 .responsive
 	position: relative
@@ -248,27 +338,42 @@
 	.responsive__dev-block
 		position: relative
 		z-index: 1
+		padding-top: 100px
 		.responsive__dev-block-in
 			position: relative
 			bottom: -40px
 			width: 100%
 			display: flex
+			+r(768)
+				& >div:first-child
+					display: none
 			.responsive__dev-out
 				display: flex
+				+r(767)
+					flex: 50% 1 0
+					justify-content: center
+					.responsive__dev3
+						display: none
 				.responsive__dev
 					margin-top: auto
+
 	.responsive__bg-out
 		width: 100%
 		height: 100%
 		position: absolute
 		top: 0
 		z-index: -1
+		// +r(768)
+		// 	& > div:first-child
+		// 		display: none
 		.responsive__bg
 			position: absolute
 			top: 0
 			z-index: 2
+			overflow: hidden
 			width: 100%
 			height: 100%
+			opacity: .4
 		.responsive__bg1
 			background:  url('./../img/responsive_layer1.png') 0 100%/auto auto  repeat-x transparent
 		.responsive__bg2
@@ -276,14 +381,38 @@
 			background:  url('./../img/responsive_layer2.png') 0 100%/auto auto  repeat-x transparent
 		.responsive__bg3
 			z-index: 4
-			background:  url('./../img/responsive_layer3.png') 0 100%/auto auto  repeat-x transparent
+			background:  url('./../img/responsive_layer3.png') 0 100%/auto auto   repeat-x transparent
 		.responsive__bg4
 			z-index: 5
 			background:  url('./../img/responsive_layer4.png') 0 100%/auto auto  repeat-x transparent
 		.responsive__bg5
 			z-index: 6
-			background:  url('./../img/responsive_grid.png') 0 100%/100% auto  repeat-x transparent
-
+			// background:  url('./../img/responsive_grid.png') 0 100%/auto auto  repeat-x transparent
+			.resp__line
+				position: relative 
+				height: 100% 
+				opacity: .4 
+				&:after
+					content: " "
+					position: absolute 
+					top: 0
+					left: 15px
+					height: 100%  
+					width: 1px 
+					bottom: 0
+					z-index: 7 
+					background: rgba($brooks-magenta, .5) 
+				&:before
+					content: " "
+					position: absolute 
+					top: 0
+					right: 15px
+					height: 100%
+					width: 1px 
+					bottom: 0
+					z-index: 7 
+					background: rgba($brooks-magenta, .5) 
+					
 #two__colomns2
 	padding-top: 160px
 	background: #fff
@@ -292,6 +421,8 @@
 		height: 150px
 		background-color: rgba(#d8d8d8, 0.15)
 		margin-bottom: 20px
+		+r(768)
+			width: 100% 
 		+clr
 		.tile__pic
 			position: relative
@@ -328,7 +459,7 @@
 			+clr
 			padding-bottom: 115px 
 			display: flex
-			align-items: center
+			align-items: baseline
 			.feature__pic
 				position: relative
 				float: left
@@ -347,20 +478,34 @@
 .why
 	position: relative
 	z-index: 1
-	padding-top: 70px
-	margin-top: 70px
+
 	.why-in
 		padding-top: 640px 
-		padding-top: 45vw
+		padding-top: 56vw
 		text-align: center
+		+rmin(1400)
+			padding-top: 50vw
+		+r(900)
+			padding-top: 45vw
+		+r(768)
+			padding-top: 40vw
+		
 	.why__header
 		+fl
 		margin-bottom: 44px
 		color: #FFF 
-		
+		letter-spacing: 5px
+		line-height: 48px 
+		+r(768)
+			margin-bottom: 0
+			padding-top: 200px 
+	.tile
+		+r(768)
+			padding-bottom: 25px 
 	.tile__pic
-
 		padding-bottom: 38px 
+		+r(768)
+			padding-bottom: 10px 
 		+vertical
 		text-align: left
 		.tile__pic-in
@@ -373,6 +518,8 @@
 			padding-bottom: 4px
 	.tile__content
 		text-align: left
+		+rmin(1400)
+			margin-bottom: 100px
 		
 	.why__bg-out
 		width: 100%
@@ -388,14 +535,22 @@
 			height: 100%
 		.why__bg1
 			background:  url('./../img/big_logo.png') center 0/auto auto  no-repeat transparent
+			+r(768)
+				background-size: 200px
 		.why__bg2
 			z-index: 3
 			background:  url('./../img/why.png') center 100%/100% auto  no-repeat transparent
+			+r(768)
+				background-size: 100% 80%
+			+r(767)
+				background-size: cover
 
 .clients
 	position: relative
 	z-index: 1
 	padding: 80px 
+	+r(900)
+		padding: 80px 0 
 	.clients-in
 		text-align: center
 	.client__header
@@ -407,21 +562,29 @@
 			padding-bottom: 15px
 		.tile__header
 			padding-bottom: 15px
-		.tile__content	
+		.tile__content
+		+r(767)
+			
+			padding-top: 40px 
 .footer
 	position: relative
 	z-index: 2
-	height: 355px 
+	padding: 100px 0
 	text-align: center
 	.footer-in
 		position: relative
 		z-index: 3
-		padding-top: 85px 
 		.footer-note
 			padding: 20px 30px
+			text-align: left
+			+r(990)
+				padding-top: 0px
 		.footer-button
+			+r(990)
+				display: inline-block
 	
 	.footer-bg
 		+coverdiv
 		zoom: 1
 		background:  url('./../img/footer.png') center/cover  no-repeat transparent
+		
